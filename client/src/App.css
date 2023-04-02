@@ -1,0 +1,18 @@
+.App {
+
+    text-align: center;
+
+}
+
+.header {
+    flex-flow: row wrap;
+    flex-direction: row;
+}
+
+.footer {
+
+    display: flex;
+    flex-flow: row wrap;
+    color: blue;
+
+}
