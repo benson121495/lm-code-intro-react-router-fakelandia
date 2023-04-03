@@ -1,18 +1,25 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const ComponentNavlink : React.FC = () => 
+const ComponentNavlink: React.FC = () => {
+    const someActiveStyleObject = { color: '#00ff00' };
+    const someOtherStyleObject = { color: '#fff' };
 
-    <nav className='is-flex is-flex-grow is-justify-content-space-evenly'>
+    return (
 
-        <ul style={ { width: "100%" } } className="is-flex is-flex-direction-row is-justify-content-space-evenly">
+        <nav>
 
-            <li><NavLink to='/'> Home </NavLink></li>
-            <li><NavLink to='/misdameanour'> Misdemeanours </NavLink></li>
-            <li><NavLink to='/confession'> Confesss To Us </NavLink></li>
+            <ul>
 
-        </ul>
+                <li><NavLink to='/' style={({ isActive }) => isActive ? someActiveStyleObject : someOtherStyleObject}             > Home </NavLink></li>
+                <li><NavLink to='/misdemeanour' style={({ isActive }) => isActive ? someActiveStyleObject : someOtherStyleObject} > Misdemeanour </NavLink></li>
+                <li><NavLink to='/confession' style={({ isActive }) => isActive ? someActiveStyleObject : someOtherStyleObject}   > Confesss To Us </NavLink></li>
 
-    </nav>
+            </ul>
+
+        </nav>
+    );
+
+};
 
 export default ComponentNavlink;
