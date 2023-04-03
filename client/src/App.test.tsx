@@ -1,6 +1,8 @@
 import React from 'react';
 import { render, screen , waitFor} from '@testing-library/react';
 import App from './App';
+import '@testing-library/jest-dom'
+
 
 test('renders the department title', () => {
 

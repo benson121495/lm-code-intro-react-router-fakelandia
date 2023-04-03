@@ -8,16 +8,33 @@ import { interfaceMisdemeanourPageProps, misdemeanoursContextCreator } from './m
 const Misdemeanour: React.FC = () => {
 
     const [misdemeanours, setMisdemeanours] = useState<interfaceMisdemeanourPageProps[]>([]);
+    const [errormessageMisdemeanour, seterrormessageMisdemeanour] = useState<string | undefined>();
 
     const getAaisdemeanour = async (numberMisdemeanour: number) => {
 
-        const apiResponse = await fetch(`http://localhost:8080/api/misdemeanours/${numberMisdemeanour}`);
-        const dataMisdemeanours = await apiResponse.json();
-        setMisdemeanours(dataMisdemeanours.misdemeanours);
+        try {
+
+            const apiResponse = await fetch(`http://localhost:8080/api/misdemeanours/${numberMisdemeanour}`);
+
+            if (apiResponse.status === 200) {
+
+                const dataMisdemeanours = await apiResponse.json();
+                setMisdemeanours(dataMisdemeanours.misdemeanours);
+            } else if (apiResponse.status === 500) {
+                seterrormessageMisdemeanour("Oops... something went wrong, try again 🤕");
+            } else if (apiResponse.status === 418) {
+                seterrormessageMisdemeanour("418 I'm a tea pot 🫖 , silly");
+            };
+
+        } catch (error) {
+
+            console.log(" this error occured : ->->-> " + error + " <-<-<- : this error occured ");
+
+        };
 
     };
 
-    useEffect(() => { getAaisdemeanour(3) }, []);
+    useEffect(() => { getAaisdemeanour(5) }, []);
     useContext(misdemeanoursContextCreator);
 
     return (
@@ -27,6 +44,7 @@ const Misdemeanour: React.FC = () => {
             <div>
                 <misdemeanoursContextCreator.Provider value={misdemeanours}>
                     <ComponentMisdemeanourPage />
+                    <div className='filter'> {errormessageMisdemeanour && <h2> {` ERROR :  ${errormessageMisdemeanour}`} </h2>}</div>
                 </misdemeanoursContextCreator.Provider>
             </div>
 

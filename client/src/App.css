@@ -16,19 +16,28 @@
     color: blue;
 
 }
+
 .table {
 
     width: 100%;
     height: 50%;
     margin-top: 1.5rem;
     text-align: center;
-  
-  }
-  
-  .filter {
-  
+
+}
+
+.filter {
+
     align-items: center;
     justify-content: center;
     display: flex;
-  
-  }
+
+}
+
+.form {
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+}
