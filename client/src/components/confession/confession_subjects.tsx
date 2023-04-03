@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext, Children, ReactElement } from 'react';
-import ComponentErrorMessage from './ErrorMessage';
+import ComponentErrorMessage from '../ErrorMessage';
 
 export interface interfaceConfesSubjectProps {
 

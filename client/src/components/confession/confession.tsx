@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext, Children, ReactElement } from 'react';
-import { interfaceMisdemeanourPageProps, misdemeanoursContextCreator } from './misdemeanour_page';
+import { interfaceMisdemeanourPageProps, misdemeanoursContextCreator } from '../misdemeaour/misdemeanour_page';
 import ComponentConfessionSubject from './confession_subjects';
 import ComponentConfessionDetails from './confession_details';
 import ComponentConfessionContact, { interfaceConfesContactProps } from './confession_contact';
-import { MisdemeanourKind, JustTalk } from '../types/misdemeanours.types';
+import { MisdemeanourKind, JustTalk } from '../../types/misdemeanours.types';
 
 export interface interfaceConfesTextProps {
 
@@ -12,7 +12,7 @@ export interface interfaceConfesTextProps {
 
 };
 
-const ComponentConfession: React.FC = () => {
+const Confession: React.FC = () => {
 
     const [confesTextSubject, setconfesTextSubject] = useState(" Type in Subject ");
     const [confesSelectionContact, setconfesSelectionContact] = useState<MisdemeanourKind | JustTalk | "">("");
@@ -47,3 +47,5 @@ const ComponentConfession: React.FC = () => {
     )
 
 };
+
+export default Confession;

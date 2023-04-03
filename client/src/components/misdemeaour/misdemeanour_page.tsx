@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext, Children, ReactElement } from 'react';
-import { Misdemeanour } from "../types/misdemeanours.types";
+import { Misdemeanour } from "../../types/misdemeanours.types";
 import ComponentMisdemeanourFilter from './misdemeanour_filter';
-import { MisdemeanourKind } from "../types/misdemeanours.types";
+import { MisdemeanourKind } from "../../types/misdemeanours.types";
 
 export interface interfaceMisdemeanourPageProps {
     citizenId: number;

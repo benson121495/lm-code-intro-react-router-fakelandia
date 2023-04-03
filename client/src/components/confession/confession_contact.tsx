@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, Children, ReactElement } from 'react';
-import { MisdemeanourKind, JustTalk } from '../types/misdemeanours.types';
-import ComponentErrorMessage from './ErrorMessage';
+import { MisdemeanourKind, JustTalk } from '../../types/misdemeanours.types';
+import ComponentErrorMessage from '../ErrorMessage';
 
 export interface interfaceConfesContactProps {
 
