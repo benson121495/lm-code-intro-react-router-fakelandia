@@ -14,9 +14,7 @@ export const misdemeanoursContextCreator = React.createContext<interfaceMisdemea
 const ComponentMisdemeanourPage: React.FC = () => {
 
     const misdemeanours = useContext(misdemeanoursContextCreator);
-
     const [misdemeanoursFiltered, setmisdemeanoursFiltered] = useState<string>("ALL 🤪 🗣 🥗 😈");
-
     const misdemeanoursFilteredArray = misdemeanours.filter((misdemeanour) => {
         if (misdemeanoursFiltered === "ALL 🤪 🗣 🥗 😈") return true;
         return misdemeanour.misdemeanour === misdemeanoursFiltered;
@@ -26,7 +24,6 @@ const ComponentMisdemeanourPage: React.FC = () => {
     return (
 
         <>
-
             <div className='filter'>
                 < ComponentMisdemeanourFilter
                     misdemeanourSelection={misdemeanoursFiltered}
@@ -37,13 +34,11 @@ const ComponentMisdemeanourPage: React.FC = () => {
             <table className='table'>
                 <thead>
                     <tr>
-
                         <th> Person        </th>
                         <th> Citizen ID      </th>
                         <th> Date            </th>
                         <th> Misdemeanour    </th>
                         <th> Punishment Idea </th>
-
                     </tr>
                 </thead>
 
@@ -63,7 +58,6 @@ const ComponentMisdemeanourPage: React.FC = () => {
                     ))}
                 </tbody>
             </table>
-
         </>
 
     );

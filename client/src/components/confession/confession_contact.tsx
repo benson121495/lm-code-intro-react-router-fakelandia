@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, Children, ReactElement } from 'react';
 import { MisdemeanourKind, JustTalk } from '../../types/misdemeanours.types';
-import ComponentErrorMessage from '../ErrorMessage';
+import ComponentErrorMessage from '../ErrorMessage/ErrorMessage';
 
 export interface interfaceConfesContactProps {
 
@@ -8,7 +8,6 @@ export interface interfaceConfesContactProps {
     onChangeValueContact: (valueContact: MisdemeanourKind | JustTalk | "") => void;
 
 };
-
 
 const ComponentConfessionContact: React.FC<interfaceConfesContactProps> = ({ valueContact, onChangeValueContact }) => {
 

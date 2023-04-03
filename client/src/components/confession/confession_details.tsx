@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext, Children, ReactElement } from 'react';
-import ComponentErrorMessage from '../ErrorMessage';
+import ComponentErrorMessage from '../ErrorMessage/ErrorMessage';
 
 export interface interfaceConfesDetailsProps {
 
@@ -12,7 +12,7 @@ const ComponentConfessionDetails: React.FC<interfaceConfesDetailsProps> = ({ val
 
     const [errorMessage, setErrorMessage] = useState<string | undefined>('');
     const validate: (value: string) => string | undefined = (value) => {
-        if ((value.length < 5) || (!(/^[a-zA-Z0-9\s]*$/).test(value))) {
+        if ((value.length <= 5) || (!(/^[a-zA-Z0-9\s]*$/).test(value))) {
             return "ERROR - Details: Must be more than 5 characters."
         };
         return undefined;

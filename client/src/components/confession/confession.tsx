@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext, Children, ReactElement } from 'react';
-import { interfaceMisdemeanourPageProps, misdemeanoursContextCreator } from '../misdemeaour/misdemeanour_page';
 import ComponentConfessionSubject from './confession_subjects';
 import ComponentConfessionDetails from './confession_details';
 import ComponentConfessionContact, { interfaceConfesContactProps } from './confession_contact';

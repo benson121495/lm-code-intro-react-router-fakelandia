@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext, Children, ReactElement } from 'react';
-import ComponentErrorMessage from '../ErrorMessage';
+import ComponentErrorMessage from '../ErrorMessage/ErrorMessage';
 
 export interface interfaceConfesSubjectProps {
 
@@ -12,7 +12,7 @@ const ComponentConfessionSubject: React.FC<interfaceConfesSubjectProps> = ({ val
 
     const [errorMessage, setErrorMessage] = useState<string | undefined>('');
     const validate: (value: string) => string | undefined = (value) => {
-        if ((value.length < 5 || value.length > 60) || (!(/^[a-zA-Z0-9\s]*$/).test(value))) {
+        if ((value.length <= 5 || value.length > 60) || (!(/^[a-zA-Z0-9\s]*$/).test(value))) {
             return "ERROR - Subject: Must be between 5 and 60 characters. Numbers are allowed, but no special characters."
         };
         return undefined;

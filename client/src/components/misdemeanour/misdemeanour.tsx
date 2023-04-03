@@ -17,7 +17,6 @@ const Misdemeanour: React.FC = () => {
             const apiResponse = await fetch(`http://localhost:8080/api/misdemeanours/${numberMisdemeanour}`);
 
             if (apiResponse.status === 200) {
-
                 const dataMisdemeanours = await apiResponse.json();
                 setMisdemeanours(dataMisdemeanours.misdemeanours);
             } else if (apiResponse.status === 500) {
@@ -40,16 +39,13 @@ const Misdemeanour: React.FC = () => {
     return (
 
         <>
-
             <div>
                 <misdemeanoursContextCreator.Provider value={misdemeanours}>
                     <ComponentMisdemeanourPage />
                     <div className='filter'> {errormessageMisdemeanour && <h2> {` ERROR :  ${errormessageMisdemeanour}`} </h2>}</div>
                 </misdemeanoursContextCreator.Provider>
             </div>
-
         </>
-
     )
 
 };

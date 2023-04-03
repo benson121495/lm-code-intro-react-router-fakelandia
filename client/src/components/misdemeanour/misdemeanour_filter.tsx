@@ -26,7 +26,6 @@ const ComponentMisdemeanourFilter: React.FC<interfaceMisdemeanourFilterProps> = 
                 </select>
             </th>
         </>
-
     );
 
 };
